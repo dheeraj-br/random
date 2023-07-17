@@ -5,17 +5,13 @@ import { globalErrorHandler, pageNotFoundHandler } from './errorHandler.js';
 const PORT = process.env.PORT || 3000;
 
 process.on('uncaughtException', (error) => {
-  // log errors and stack trace
-  console.log(error);
-  // gracefully shutdown
-  //
+  console.log(error); // TODO: use logger instead of console statement
+  // TODO: gracefully shutdown
 });
 
 process.on('unhandledRejection', (error) => {
-  // log errors and stack trace
-  console.log(error);
-  // gracefully shutdown
-  //
+  console.log(error); // TODO: use logger instead of console statement
+  // TODO: gracefully shutdown
 });
 
 let app = express();

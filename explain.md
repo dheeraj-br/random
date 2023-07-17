@@ -1,5 +1,7 @@
-# Route seperation for different modules
+[step1-route-seperation/explain.md](https://github.com/dheeraj-br/random/blob/step1-route-seperation/explain.md)
 
-- each module has a dedicated route file.
-- global route file imports module's route as a middleware, this where we specify the base of the route for each module.
-- global route file is imported into the app's fornt controller as a middleware
+# global error handler, unhandled rejection and uncaught exception
+
+- global error handler to catch operational errors (page not found) and run time errors (errors in the code)
+- conditionally expose only relavent details to client based on type of error
+- catch unhandled rejection and uncaught exception from outside express (eg: db connection)

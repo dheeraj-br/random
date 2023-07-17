@@ -9,7 +9,7 @@ export const getById = catchRuntimeError((req, res) => {
   undefinedVarForTesting500StatusCode;
   if (!parseInt(req.params.id)) {
     throw new CustomError(
-      `Bad Request: invalid Id parameter '${req.params.id}'`,
+      `Bad Request: invalid Id parameter '${req.params.id}'`, // TODO: use i18n
       httpStatus.BAD_REQUEST,
       true
     );

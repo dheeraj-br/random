@@ -12,7 +12,7 @@ export class CustomError extends Error {
 
 export function pageNotFoundHandler(req, res, next) {
   const error = new CustomError(
-    `cannot find ${req.originalUrl}`,
+    `cannot find ${req.originalUrl}`, // TODO: use i18n
     httpStatus.NOT_FOUND,
     true
   );
@@ -42,9 +42,7 @@ export function globalErrorHandler(error, req, res, next) {
       isOperationalError: error.isOperationalError,
     });
   } else {
-    // log errors and stack trace
-    console.log(error);
-    //
+    console.log(error); // TODO: use logger instead of console statement
     res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       message: httpStatus['500_NAME'],
       statusCode: httpStatus.INTERNAL_SERVER_ERROR,
