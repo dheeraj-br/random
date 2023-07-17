@@ -1,4 +1,4 @@
-# Route seperation for different module
+# Route seperation for different modules
 
 - each module has a dedicated route file.
 - global route file imports module route as a middleware, this where we specify the base of the route.
