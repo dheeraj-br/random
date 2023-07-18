@@ -1,7 +1,12 @@
 [step1-route-seperation/explain.md](https://github.com/dheeraj-br/random/blob/step1-route-seperation/explain.md)
 
-# adds global error handler, unhandled rejection and uncaught exception handlers
+[step2-global-errorhandling/explain.md](https://github.com/dheeraj-br/random/blob/step2-global-errorhandling/explain.md)
 
-- global error handler to catch operational errors (page not found) and run time errors (errors in the code)
-- conditionally expose only relavent details to client based on type of error
-- catch unhandled rejection and uncaught exception from outside express (eg: db connection)
+# add Vhost to support subomains and root domain and segregate requests
+
+- adds vhost package.
+- create new express apps for each subdomain/root domain.
+- pass domain name and routes to Vhost package.
+- add error handling to each of the subdomain and root domain.
+- all routes are handled by these new express apps only.
+- main express main app only serves as a container for running the vhost's apps.
