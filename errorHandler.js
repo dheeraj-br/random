@@ -6,7 +6,7 @@ export class CustomError extends Error {
     this.message = message;
     this.statusCode = statusCode;
     this.shouldShowShortError = shouldShowShortError;
-    Error.captureStackTrace(this, this.constructor);
+    Error.captureStackTrace(this, this.constructor); // TODO: better stack trace
   }
 }
 
