@@ -7,11 +7,7 @@ const PORT = process.env.PORT || 3000;
 process.on('uncaughtException', (error) => {
   console.log(error); // TODO: use logger instead of console statement
   // TODO: gracefully shutdown
-});
-
-process.on('unhandledRejection', (error) => {
-  console.log(error); // TODO: use logger instead of console statement
-  // TODO: gracefully shutdown
+  process.exit(1);
 });
 
 let app = express();
@@ -22,4 +18,12 @@ app.all('*', pageNotFoundHandler);
 
 app.use(globalErrorHandler);
 
-app.listen(PORT);
+const server = app.listen(PORT);
+
+process.on('unhandledRejection', (error) => {
+  console.log(error); // TODO: use logger instead of console statement
+  // TODO: gracefully shutdown
+  server.close(() => {
+    process.exit(1);
+  });
+});
