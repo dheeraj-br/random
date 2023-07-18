@@ -6,7 +6,7 @@ export class CustomError extends Error {
     this.message = message;
     this.statusCode = statusCode;
     this.shouldShowShortError = shouldShowShortError;
-    Error.captureStackTrace(this, this.constructor); // TODO: better stack trace
+    Error.captureStackTrace(this, this.constructor); // TODO: use more accurate stack trace
   }
 }
 
@@ -42,12 +42,17 @@ export function globalErrorHandler(error, req, res, next) {
       statusCode: error.statusCode,
     });
   } else {
-    console.log(error); // TODO: use logger instead of console statement
-    // TODO: if 'production' dont display stacktrace
+    // TODO: use logger instead of console statement
+    console.log({
+      env: process.env.NODE_ENV,
+      message: error.message,
+      statusCode: error.statusCode,
+      stack: error.stack,
+    });
+    // send generic message to client
     res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       message: httpStatus['500_NAME'],
       statusCode: httpStatus.INTERNAL_SERVER_ERROR,
-      stackTrace: error.stack,
     });
   }
 }
