@@ -6,7 +6,7 @@ export const list = (req, res) => {
 };
 
 export const getById = catchRuntimeError((req, res) => {
-  undefinedVarForTesting500StatusCode;
+  // undefinedVarForTesting500StatusCode;
   if (!parseInt(req.params.id)) {
     throw new CustomError(
       `Bad Request: invalid Id parameter '${req.params.id}'`, // TODO: use i18n
