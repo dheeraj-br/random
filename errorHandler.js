@@ -12,7 +12,7 @@ export class CustomError extends Error {
 
 export function pageNotFoundHandler(req, res, next) {
   const error = new CustomError(
-    `cannot find ${req.originalUrl}`, // TODO: use i18n
+    httpStatus['404_NAME'].replaceAll('_', ' '), // TODO: use i18n
     httpStatus.NOT_FOUND,
     true
   );
@@ -25,10 +25,11 @@ export function catchRuntimeError(controller) {
     try {
       controller(req, res, next);
     } catch (error) {
+      // TODO: needs more smoke testing
       const customError = new CustomError(
-        error.message,
+        error.message || httpStatus['500_NAME'].replaceAll('_', ' '), // use i18n
         error.statusCode || httpStatus.INTERNAL_SERVER_ERROR,
-        error.shouldShowShortError
+        error.shouldShowShortError || false
       );
       next(customError);
     }
@@ -37,7 +38,7 @@ export function catchRuntimeError(controller) {
 
 export function globalErrorHandler(error, req, res, next) {
   if (error.shouldShowShortError) {
-    res.status(error.statusCode).render('404', {
+    res.status(error.statusCode).render('error', {
       message: error.message,
       statusCode: error.statusCode,
     });
@@ -50,8 +51,8 @@ export function globalErrorHandler(error, req, res, next) {
       stack: error.stack,
     });
     // send generic message to client
-    res.status(httpStatus.INTERNAL_SERVER_ERROR).render('404', {
-      message: httpStatus['500_NAME'],
+    res.status(httpStatus.INTERNAL_SERVER_ERROR).render('error', {
+      message: httpStatus['500_NAME'].replaceAll('_', ' '),
       statusCode: httpStatus.INTERNAL_SERVER_ERROR,
     });
   }
