@@ -1,3 +1,54 @@
-h1 {
-    color: green;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,600,800,400);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #5d676c;
+  font-family: "Open Sans", sans-serif;
+}
+
+.band h1 {
+  margin: 0;
+  padding: 0 0 10px;
+  color: #fff;
+  font-size: 32px;
+}
+.band p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 17px;
+}
+
+.band-container {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  min-height: 85vh;
+  max-width: 960px;
+  display: table;
+  position: relative;
+  padding: 0 3em;
+}
+
+.band-inner {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3em 0 4em;
+}
+
+.band-a {
+  background: #69d2e7;
+}
+
+.band-b {
+  background: #f9d423;
+}
+
+.band-c {
+  background: #f38630;
+}
+
+.band-d {
+  background: #ff4e50;
 }

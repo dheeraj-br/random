@@ -1,5 +1,25 @@
 doctype html
 head
-  title Pug
+  title pug
   link(rel='stylesheet' href='/404style.css')
-h1 #{statusCode}: #{message}
+.bg-purple
+  .stars
+    .custom-navbar
+      .brand-logo
+        img(src='https://i.pinimg.com/originals/a0/26/1b/a0261b885cfba5a65c675c33327acf5a.png' width='80px')
+    .central-body
+      div(style='color: white; font-weight: 600; font-size: 100px;') #{statusCode}
+      div(style='color: white; font-weight: 600; font-size: 80px;') #{message}
+    .objects
+      img.object_rocket(src='http://salehriaz.com/404Page/img/rocket.svg' width='40px')
+      .earth-moon
+        img.object_earth(src='http://salehriaz.com/404Page/img/earth.svg' width='100px')
+        img.object_moon(src='http://salehriaz.com/404Page/img/moon.svg' width='80px')
+      .box_astronaut
+        img.object_astronaut(src='http://salehriaz.com/404Page/img/astronaut.svg' width='140px')
+    .glowing_stars
+      .star
+      .star
+      .star
+      .star
+      .star

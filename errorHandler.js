@@ -12,7 +12,7 @@ export class CustomError extends Error {
 
 export function pageNotFoundHandler(req, res, next) {
   const error = new CustomError(
-    `cannot find ${req.originalUrl}`, // TODO: use i18n
+    httpStatus['404_NAME'].replaceAll('_', ' '), // TODO: use i18n
     httpStatus.NOT_FOUND,
     true
   );
@@ -27,7 +27,7 @@ export function catchRuntimeError(controller) {
     } catch (error) {
       // TODO: needs more smoke testing
       const customError = new CustomError(
-        error.message || 'something went wrong.', // use i18n
+        error.message || httpStatus['500_NAME'].replaceAll('_', ' '), // use i18n
         error.statusCode || httpStatus.INTERNAL_SERVER_ERROR,
         error.shouldShowShortError || false
       );
@@ -52,7 +52,7 @@ export function globalErrorHandler(error, req, res, next) {
     });
     // send generic message to client
     res.status(httpStatus.INTERNAL_SERVER_ERROR).render('error', {
-      message: httpStatus['500_NAME'],
+      message: httpStatus['500_NAME'].replaceAll('_', ' '),
       statusCode: httpStatus.INTERNAL_SERVER_ERROR,
     });
   }
