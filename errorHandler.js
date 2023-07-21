@@ -37,7 +37,7 @@ export function catchRuntimeError(controller) {
 
 export function globalErrorHandler(error, req, res, next) {
   if (error.shouldShowShortError) {
-    res.status(error.statusCode).json({
+    res.status(error.statusCode).render('404', {
       message: error.message,
       statusCode: error.statusCode,
     });
@@ -50,7 +50,7 @@ export function globalErrorHandler(error, req, res, next) {
       stack: error.stack,
     });
     // send generic message to client
-    res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+    res.status(httpStatus.INTERNAL_SERVER_ERROR).render('404', {
       message: httpStatus['500_NAME'],
       statusCode: httpStatus.INTERNAL_SERVER_ERROR,
     });
