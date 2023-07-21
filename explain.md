@@ -22,6 +22,7 @@ step 13: sockets and chat feature
 step 14: docker image
 step 15: kafka
 step 16: microservices
-step 17: deployment
-step 18: AWS services
-step 19: ci/cd
+step 17: design and architecture
+step 18: deployment
+step 19: AWS services
+step 20: ci/cd
