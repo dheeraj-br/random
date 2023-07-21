@@ -10,19 +10,26 @@
 - add 4 different templates for each of the vhost's error handling middleware
 - add public files to serve style sheets and global home page
 
-step 5: logging, debugging, extensions
-step 6: env variables
-step 7: multiple databases with crud, transactions and aggregations
-step 8: access 3rd party api
-step 9: automated tests
-step 10: caching
-step 11: front end
-step 12: email, sms, real time notifications
-step 13: sockets and chat feature
-step 14: docker image
-step 15: kafka
-step 16: microservices
-step 17: design and architecture
-step 18: deployment
-step 19: AWS services
-step 20: ci/cd
+- step 5 Prettier, Eslint, gofmt
+- step 6 env variables and NODE_ENV
+- step 7 debugging, vcs extensions
+- step 8 documentation, swagger documentation
+- step 9 logging
+- step 10 typescript integration, nest.js like architecture
+- step 11 multiple databases with crud, transactions and aggregations
+- step 12 access 3rd party api, api conventions and integration guidelines
+- step 13 automated tests
+- step 14 caching, redis caching
+- step 15 front end integration architecture, react, react query, react router
+- step 16 form submitions, file uploads, file read and processing, file downloads
+- step 17 authentication, authorization, 0auth, session data, timeout logout, cookies, local storage
+- step 18 email, sms, real time notifications, serverless, headless
+- step 19 sockets and chat feature
+- step 20 docker
+- step 21 kafka
+- step 22 microservices
+- step 23 design and architecture
+- step 24 deployment
+- step 25 AWS services
+- step 26 ci/cd
+- step 27 performance testing
