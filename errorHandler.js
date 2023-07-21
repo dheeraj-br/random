@@ -1,11 +1,11 @@
 import httpStatus from 'http-status';
 
 export class CustomError extends Error {
-  constructor(message, statusCode, shouldShowShortError = false) {
+  constructor(message, statusCode, isVerboseDisabled = false) {
     super(message);
     this.message = message;
     this.statusCode = statusCode;
-    this.shouldShowShortError = shouldShowShortError;
+    this.isVerboseDisabled = isVerboseDisabled;
     Error.captureStackTrace(this, this.constructor); // TODO: use more accurate stack trace
   }
 }
@@ -29,7 +29,7 @@ export function catchRuntimeError(controller) {
       const customError = new CustomError(
         error.message || httpStatus['500_NAME'].replaceAll('_', ' '), // use i18n
         error.statusCode || httpStatus.INTERNAL_SERVER_ERROR,
-        error.shouldShowShortError || false
+        error.isVerboseDisabled || false
       );
       next(customError);
     }
@@ -37,7 +37,7 @@ export function catchRuntimeError(controller) {
 }
 
 export function globalErrorHandler(error, req, res, next) {
-  if (error.shouldShowShortError) {
+  if (error.isVerboseDisabled) {
     res.status(error.statusCode).render('error', {
       message: error.message,
       statusCode: error.statusCode,
