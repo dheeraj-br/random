@@ -1,5 +1,5 @@
 import httpStatus from 'http-status';
-import { CustomError, catchRuntimeError } from '../../errorHandler.js';
+import { CustomError, catchRuntimeError } from '../../../errorHandler.js';
 
 export const list = (req, res) => {
   res.send({ title: 'Users', users: 'list of users' });
