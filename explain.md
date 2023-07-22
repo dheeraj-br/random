@@ -6,8 +6,30 @@
 
 [step4-static-files-and-template-engines/explain.md](https://github.com/dheeraj-br/random/blob/step4-static-files-and-template-engines/explain.md)
 
-# adds prettier and formats the whole project
+[step5-add-prettier/explain.md](https://github.com/dheeraj-br/random/blob/step5-add-prettier/explain.md)
 
-- add prettierignore to exclude files and folders
-- add prettierrc to configure how files are formatted. eg: add or remove semicolons
-- use npx to format files, eg: npx prettier --write [filename] or npx prettier --write . for directory
+# adds productivity extensions
+
+- these extensions are synced to github account: dheeraj.br2@gmail.com
+-     2gua.rainbow-brackets
+-     ChakrounAnas.turbo-console-log
+-     dbaeumer.vscode-eslint
+-     donjayamanne.githistory
+-     dsznajder.es7-react-js-snippets
+-     dzhavat.bracket-pair-toggler
+-     eamodio.gitlens
+-     esbenp.prettier-vscode
+-     GitHub.copilot
+-     humao.rest-client
+-     mhutchie.git-graph
+-     michelemelluso.gitignore
+-     ms-vsliveshare.vsliveshare
+-     oderwat.indent-rainbow
+-     ritwickdey.LiveServer
+-     streetsidesoftware.code-spell-checker
+-     TabNine.tabnine-vscode
+-     vscode-icons-team.vscode-icons
+-     WallabyJs.quokka-vscode
+-     wayou.vscode-todo-highlight
+-     wix.vscode-import-cost
+-     yoavbls.pretty-ts-errors
