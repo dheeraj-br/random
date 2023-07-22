@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+import httpStatus from "http-status";
 
 export class CustomError extends Error {
   constructor(message, statusCode, isVerboseDisabled = false) {
@@ -12,9 +12,9 @@ export class CustomError extends Error {
 
 export function pageNotFoundHandler(req, res, next) {
   const error = new CustomError(
-    httpStatus['404_NAME'].replaceAll('_', ' '), // TODO: use i18n
+    httpStatus["404_NAME"].replaceAll("_", " "), // TODO: use i18n
     httpStatus.NOT_FOUND,
-    true
+    true,
   );
   next(error);
 }
@@ -27,9 +27,9 @@ export function catchRuntimeError(controller) {
     } catch (error) {
       // TODO: needs more smoke testing
       const customError = new CustomError(
-        error.message || httpStatus['500_NAME'].replaceAll('_', ' '), // use i18n
+        error.message || httpStatus["500_NAME"].replaceAll("_", " "), // use i18n
         error.statusCode || httpStatus.INTERNAL_SERVER_ERROR,
-        error.isVerboseDisabled || false
+        error.isVerboseDisabled || false,
       );
       next(customError);
     }
@@ -38,7 +38,7 @@ export function catchRuntimeError(controller) {
 
 export function globalErrorHandler(error, req, res, next) {
   if (error.isVerboseDisabled) {
-    res.status(error.statusCode).render('error', {
+    res.status(error.statusCode).render("error", {
       message: error.message,
       statusCode: error.statusCode,
     });
@@ -51,8 +51,8 @@ export function globalErrorHandler(error, req, res, next) {
       stack: error.stack,
     });
     // send generic message to client
-    res.status(httpStatus.INTERNAL_SERVER_ERROR).render('error', {
-      message: httpStatus['500_NAME'].replaceAll('_', ' '),
+    res.status(httpStatus.INTERNAL_SERVER_ERROR).render("error", {
+      message: httpStatus["500_NAME"].replaceAll("_", " "),
       statusCode: httpStatus.INTERNAL_SERVER_ERROR,
     });
   }
