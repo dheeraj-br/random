@@ -10,6 +10,8 @@
 - add 4 different templates for each of the vhost's error handling middleware
 - add public files to serve style sheets and global home page
 
+#
+
 - step 5 Prettier, Eslint, gofmt
 - step 6 env variables and NODE_ENV
 - step 7 debugging, vcs extensions

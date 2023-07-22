@@ -1,7 +1,7 @@
 export const list = (req, res) => {
-  res.send({ title: 'doc', posts: 'list' });
+  res.send({ title: "doc", posts: "list" });
 };
 
 export const getById = (req, res) => {
-  res.send({ title: 'doc', dataId: req.params.id });
+  res.send({ title: "doc", dataId: req.params.id });
 };
