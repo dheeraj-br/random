@@ -4,34 +4,39 @@
 
 [step3-subdomains/explain.md](https://github.com/dheeraj-br/random/blob/step3-subdomains/explain.md)
 
-# adds templates and static files
+[step4-static-files-and-template-engines/explain.md](https://github.com/dheeraj-br/random/blob/step4-static-files-and-template-engines/explain.md)
 
-- reorganize folder structure, move vhost apps and route files to dedicated files
-- add 4 different templates for each of the vhost's error handling middleware
-- add public files to serve style sheets and global home page
+[step5-add-prettier/explain.md](https://github.com/dheeraj-br/random/blob/step5-add-prettier/explain.md)
 
-#
+[step6-add-vcs-extentions/explain.md](https://github.com/dheeraj-br/random/blob/step6-add-vcs-extentions/explain.md)
 
-- step 5 Prettier, Eslint, gofmt
-- step 6 env variables and NODE_ENV
-- step 7 debugging, vcs extensions
-- step 8 documentation, swagger documentation
-- step 9 logging
-- step 10 typescript integration, nest.js like architecture
-- step 11 multiple databases with crud, transactions and aggregations
-- step 12 access 3rd party api, api conventions and integration guidelines
-- step 13 automated tests
-- step 14 caching, redis caching
-- step 15 front end integration architecture, react, react query, react router
-- step 16 form submitions, file uploads, file read and processing, file downloads
-- step 17 authentication, authorization, 0auth, session data, timeout logout, cookies, local storage
-- step 18 email, sms, real time notifications, serverless, headless
-- step 19 sockets and chat feature
-- step 20 docker
-- step 21 kafka
-- step 22 microservices
-- step 23 design and architecture
-- step 24 deployment
-- step 25 AWS services
-- step 26 ci/cd
-- step 27 performance testing
+# adds eslint, prettier, husky and lint-staged packages for linting and formatting pre-commit
+files added 
+-
+eslintrc - configs for eslint that holds rules, plugins and config extensions
+prettierrc - overrides default configs for prettier rules
+eslintignore - ignores files and folder from being linted
+prettierignore - ignores files and folders from being formatted
+-
+extends - eslint feature to extend configs, from repository or local files
+plugin - eslint feature to use plugin, from repository or local files
+custom rules - user defined rules that can be applied to eslint
+custom plugins and configs - user defined plugins and configs that can be applied to eslint
+airbnb, google, standard - popular plugins and configs from airbnb and google
+-
+npm i --save-dev --save-exact prettier eslint 
+adds prettier and eslint as dev dependencies and the versions would not update automatically
+
+npm i --save-dev eslint-config-prettier eslint-plugin-prettier
+configs and plugin for prettier to be added to eslint, this allows prettier to override eslint rules. prettier must be prepended to the end of 'plugin' or 'extends' to override eslint rules.
+
+npx eslint-config-prettier .\apps\*
+this lists overlaps between eslint and prettier rules. prettier must take precedence over eslint rules.
+
+# husky
+package to utilize git hooks. 
+allows to run tasks before git commit or git push 
+
+# lint-staged
+package to run tasks on only the files that are staged for git commit.
+this can be used to run eslint on only the files that are staged and not on the entire repository.
