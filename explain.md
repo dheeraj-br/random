@@ -8,6 +8,7 @@
 
 [step5-add-prettier/explain.md](https://github.com/dheeraj-br/random/blob/step5-add-prettier/explain.md)
 
+
 [step6-add-vcs-extentions/explain.md](https://github.com/dheeraj-br/random/blob/step6-add-vcs-extentions/explain.md)
 
 # adds eslint, prettier, husky and lint-staged packages for linting and formatting pre-commit
