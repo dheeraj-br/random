@@ -1,8 +1,10 @@
-import express from "express";
-import { getById, list, subdomain } from "./controller.js";
+import express from 'express';
+import { getById, list, subdomain } from './controller.js';
 
-export const router = express.Router();
+const router = express.Router();
 
-router.get("/list", list);
-router.get("/:id", getById);
-router.get("/", subdomain);
+router.get('/list', list);
+router.get('/:id', getById);
+router.get('/', subdomain);
+
+export default router;

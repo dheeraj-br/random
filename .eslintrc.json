@@ -1,0 +1,25 @@
+{
+    "plugins": [
+        "promise",
+        "prettier"
+    ],
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "import/extensions": "off",
+        "no-console": "off",
+        "consistent-return": "warn",
+        "promise/catch-or-return": "error",
+        "eqeqeq": "error"
+    }
+}

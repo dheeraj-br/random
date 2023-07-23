@@ -1,6 +1,8 @@
-import express from "express";
-import { router as docRouter } from "../domains/doc/route.js";
+import express from 'express';
+import docRouter from '../domains/doc/route.js';
 
-export const router = express.Router();
+const router = express.Router();
 
-router.use("/info", docRouter);
+router.use('/info', docRouter);
+
+export default router;
