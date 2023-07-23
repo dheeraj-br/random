@@ -10,26 +10,28 @@
 
 # adds productivity extensions
 
-- these extensions are synced to github account: dheeraj.br2@gmail.com
--     2gua.rainbow-brackets
--     ChakrounAnas.turbo-console-log
--     dbaeumer.vscode-eslint
--     donjayamanne.githistory
--     dsznajder.es7-react-js-snippets
--     dzhavat.bracket-pair-toggler
--     eamodio.gitlens
--     esbenp.prettier-vscode
--     GitHub.copilot
--     humao.rest-client
--     mhutchie.git-graph
--     michelemelluso.gitignore
--     ms-vsliveshare.vsliveshare
--     oderwat.indent-rainbow
--     ritwickdey.LiveServer
--     streetsidesoftware.code-spell-checker
--     TabNine.tabnine-vscode
--     vscode-icons-team.vscode-icons
--     WallabyJs.quokka-vscode
--     wayou.vscode-todo-highlight
--     wix.vscode-import-cost
--     yoavbls.pretty-ts-errors
+-   these extensions are synced to github account: dheeraj.br2@gmail.com
+- 	2gua.rainbow-brackets	
+- 	ChakrounAnas.turbo-console-log	
+- 	dbaeumer.vscode-eslint	
+- 	donjayamanne.githistory	
+- 	dsznajder.es7-react-js-snippets	
+- 	dzhavat.bracket-pair-toggler	
+- 	eamodio.gitlens	
+- 	esbenp.prettier-vscode	
+- 	GitHub.copilot	
+- 	humao.rest-client	
+- 	mhutchie.git-graph	
+- 	michelemelluso.gitignore	
+- 	ms-vsliveshare.vsliveshare	
+- 	oderwat.indent-rainbow	
+- 	ritwickdey.LiveServer	
+- 	streetsidesoftware.code-spell-checker	
+- 	TabNine.tabnine-vscode	
+- 	usernamehw.errorlens	
+- 	vscode-icons-team.vscode-icons	
+- 	WallabyJs.quokka-vscode	
+- 	wayou.vscode-todo-highlight	
+- 	wix.vscode-import-cost	
+- 	yoavbls.pretty-ts-errors	
+
