@@ -1,8 +1,10 @@
-import express from "express";
-import { router as userRouter } from "../domains/root/users/route.js";
-import { router as postRouter } from "../domains/root/posts/route.js";
+import express from 'express';
+import userRouter from '../domains/root/users/route.js';
+import postRouter from '../domains/root/posts/route.js';
 
-export const router = express.Router();
+const router = express.Router();
 
-router.use("/user", userRouter);
-router.use("/post", postRouter);
+router.use('/user', userRouter);
+router.use('/post', postRouter);
+
+export default router;
