@@ -1,4 +1,5 @@
 import httpStatus from 'http-status';
+import config from './config/index.js';
 
 export class CustomError extends Error {
     constructor(message, statusCode, isVerboseDisabled = false) {
@@ -46,7 +47,7 @@ export function globalErrorHandler(error, req, res, next) {
     } else {
         // TODO: use logger instead of console statement
         console.log({
-            env: process.env.NODE_ENV,
+            env: config.NODE_ENV,
             message: error.message,
             statusCode: error.statusCode,
             stack: error.stack,
