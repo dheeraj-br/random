@@ -16,6 +16,8 @@
         "sourceType": "module"
     },
     "rules": {
+        "prettier/prettier": "error",
+        "no-underscore-dangle": "off",
         "import/extensions": "off",
         "no-console": "off",
         "consistent-return": "warn",
