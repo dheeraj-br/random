@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        /*  
+        *
+        *    use "Auto attach: with flag" option. 
+        *    launches automatically.
+        *    doest require lauch.json and reflects updated code during same debugging session.
+        *    note: use customise launch configuration only if auto attach is not specific enough
+        *    all "attach" type requests requires --inspect flag to be added during launch 
+        *                            
+        */
+        { // reflects upadted code during the same debugging session witout needingrestart.
+            // similar in function to "auto attach"
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "name": "nodemon",
+            "program": "${workspaceFolder}/app.js",
+            "request": "launch",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        { // auto restarts with new debugger session on saving file changes
+            "name": "Attach by Process ID",
+            "processId": "${command:PickProcess}",
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "restart": true
+        },
+        { // auto restarts with new debugger session on saving file changes
+            "name": "Attach",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "port": 9229 // why use default port for debugging? major security issue?
+        },
+        { // no restart option for 'lauch' request type, available only for 'attach' types
+            // automatically lauches node process
+            // does not reflect changes made to files, would need to manually restart/refresh debug session
+            "type": "node",
+            "request": "launch",
+            "name": "Launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\apps\\app.js"
+        }
+        // {
+        //     "address": "TCP/IP address of process to be debugged",
+        //     "localRoot": "${workspaceFolder}",
+        //     "name": "Attach to Remote",
+        //     "port": 9229,
+        //     "remoteRoot": "Absolute path to the remote directory containing the program",
+        //     "request": "attach",
+        //     "skipFiles": [
+        //         "<node_internals>/**"
+        //     ],
+        //     "type": "node"
+        // },
+    ]
+}
