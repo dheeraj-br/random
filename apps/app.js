@@ -17,13 +17,15 @@ const app = express();
 app.use(express.static('public'));
 
 // adding subdomains and root domain to app
-app.use(vhost(`${config.DOMAIN.DOC}`, doc));
+const { API, DOC, ROOT, WILDCARD } = JSON.parse(config.DOMAIN);
 
-app.use(vhost(`${config.DOMAIN.API}`, api));
+app.use(vhost(API, api));
 
-app.use(vhost(`${config.DOMAIN.WILDCARD}`, wildcard));
+app.use(vhost(DOC, doc));
 
-app.use(vhost(`${config.DOMAIN.ROOT}`, root));
+app.use(vhost(ROOT, root));
+
+app.use(vhost(WILDCARD, wildcard));
 
 // starting server and listening on PORT
 const server = app.listen(config.PORT); // TODO: needs error handling and info, EH already present?? on uncaughtException handles this.
