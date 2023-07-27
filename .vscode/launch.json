@@ -7,10 +7,10 @@
         *    launches automatically.
         *    doest require lauch.json and reflects updated code during same debugging session.
         *    note: use customise launch configuration only if auto attach is not specific enough
-        *    all "attach" type requests requires --inspect flag to be added during launch 
+        *    "attach" type requests without processId requires --inspect flag to be added during launch 
         *                            
         */
-        { // reflects upadted code during the same debugging session witout needingrestart.
+        { // reflects upadted code during the same debugging session witout needing restart.
             // similar in function to "auto attach"
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
