@@ -28,4 +28,7 @@
 -   'Auto attach' feature attaches the debugger to node process immediately on startup
 -   'Auto attach' can be configured to attach only on process that were started with --inspect flag
 -   'Auto attach' has other options such as 'smart' and 'always' to decide when debugger is attached to a node process
+-   when node process in started with a --inspect flag, chrome's debugger can be attached to the node process by visiting at chrome://inspect > 'devtools for node' or in firebug's options
+-   when opened in chrome, operations like memory and performance metrics can be performed
+-   changes to files do not reflect in the same debug session in chrome. debug session get restarted
 -   vcs has no features such as function breakpoint and variable use breakpoint (data breakpoint)
