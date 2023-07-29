@@ -14,14 +14,14 @@ process.on('uncaughtException', (error) => {
 
 const app = express();
 
-app.use(express.static('public'));
-
 // adding subdomains and root domain to app
 const { API, DOC, ROOT, WILDCARD } = JSON.parse(config.DOMAIN);
 
-app.use(vhost(API, api));
-
 app.use(vhost(DOC, doc));
+
+app.use(express.static('public'));
+
+app.use(vhost(API, api));
 
 app.use(vhost(ROOT, root));
 
