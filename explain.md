@@ -14,13 +14,10 @@
 
 [step8-add-env-variables/explain.md](https://github.com/dheeraj-br/random/blob/step8-add-env-variables/explain.md)
 
+[step-9-debugger/explain.md](https://github.com/dheeraj-br/random/blob/step-9-debugger/explain.md)
+
 [step-10-documentation/explain.md](https://github.com/dheeraj-br/random/blob/step-10-documentation/explain.md)
 
-# adds swagger-ui-express and swagger.json
-
--   creates an interactive UI for api documentation.
--   data required for swagger is specified in swagger.json instead of annotations on controllers, to avoid clutter.
--   future plans to add schema and using annotations to auto generate api structure instead of manual maintenance
-
--   as an alternative to using swagger.json, js-doc has been added.
--   js-doc annotations clutter code base, auto generated doc would be prefered
+# adds logger, pino library 
+-   add logger library for more versatile logging and display of error messages
+-   basic functionality with printing error to console
