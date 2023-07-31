@@ -21,3 +21,6 @@
 -   creates an interactive UI for api documentation.
 -   data required for swagger is specified in swagger.json instead of annotations on controllers, to avoid clutter.
 -   future plans to add schema and using annotations to auto generate api structure instead of manual maintenance
+
+-   as an alternative to using swagger.json, js-doc has been added.
+-   js-doc annotations clutter code base, auto generated doc would be prefered

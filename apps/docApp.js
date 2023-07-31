@@ -6,6 +6,7 @@ const doc = express();
 doc.set('view engine', 'ejs');
 doc.set('views', './views/ejs');
 doc.use('/', router);
+doc.use(express.static('public'));
 doc.all('*', pageNotFoundHandler);
 doc.use(globalErrorHandler);
 

@@ -14,9 +14,19 @@ process.on('uncaughtException', (error) => {
 
 const app = express();
 
-// adding subdomains and root domain to app
 const { API, DOC, ROOT, WILDCARD } = JSON.parse(config.DOMAIN);
 
+/* NOTE:
+ * doc domain serves swagger doc from root domain
+ * since there is an index.html file in the public folder, it would override swagger doc by order of appearance
+ * hence routes need to be loaded before creating public folder to avoid overriding
+
+ * but this causes broken reference links in views rendered by doc domain's routes,
+ * since doc domain interprets file reference to public folder as a route.
+ * to avoid such broken reference links, static folder reference need to be created inside doc domain as well
+ * the root route get defined first and then the public folder. this allows route to supersede index.html
+ * doc domain is now configured to have a root route and also a public static folder. 
+ */
 app.use(vhost(DOC, doc));
 
 app.use(express.static('public'));
