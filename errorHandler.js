@@ -1,4 +1,5 @@
 import httpStatus from 'http-status';
+import logger from './logger.js';
 import config from './config/index.js';
 
 export class CustomError extends Error {
@@ -44,16 +45,14 @@ export function globalErrorHandler(error, req, res, next) {
             message: error.message,
             statusCode: error.statusCode,
         });
-        // TODO: use logger instead of console statement
-        console.log({
+        logger.error({
             env: config.NODE_ENV,
             message: error.message,
             statusCode: error.statusCode,
             stack: error.stack,
         });
     } else {
-        // TODO: use logger instead of console statement
-        console.log({
+        logger.error({
             env: config.NODE_ENV,
             message: error.message,
             statusCode: error.statusCode,
