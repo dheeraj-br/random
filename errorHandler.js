@@ -44,6 +44,13 @@ export function globalErrorHandler(error, req, res, next) {
             message: error.message,
             statusCode: error.statusCode,
         });
+        // TODO: use logger instead of console statement
+        console.log({
+            env: config.NODE_ENV,
+            message: error.message,
+            statusCode: error.statusCode,
+            stack: error.stack,
+        });
     } else {
         // TODO: use logger instead of console statement
         console.log({
