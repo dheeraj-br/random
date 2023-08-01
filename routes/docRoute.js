@@ -2,7 +2,7 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import path from 'path';
-import docRouter from '../domains/doc/route.js';
+import docRouter from '../src/doc/route.js';
 
 /* 
  Alternate way to define openApi specs without annotations
@@ -23,7 +23,7 @@ const jsDocOptions = {
             version: '1.0.0',
         },
     },
-    apis: [path.join(process.cwd(), '/domains/**/*.js')],
+    apis: [path.join(process.cwd(), '/src/**/*.js')],
 };
 
 const openApiSpecification = swaggerJSDoc(jsDocOptions);

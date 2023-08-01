@@ -1,6 +1,6 @@
 import express from 'express';
-import userRouter from '../domains/root/users/route.js';
-import postRouter from '../domains/root/posts/route.js';
+import userRouter from '../src/root/users/route.js';
+import postRouter from '../src/root/posts/route.js';
 
 const router = express.Router();
 
